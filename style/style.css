@@ -4,12 +4,15 @@
   box-sizing: border-box;
   font-family: "Courier New", Courier, monospace;
 }
+body {
+  background-color: rgb(32, 29, 29);
+}
 header {
   width: 100%;
   height: 55vh;
   background: url(../assets/design1_image1.jpg);
   background-size: cover;
-  background-position:0 -150px;
+  background-position: 0 -150px;
   padding: 1rem;
 }
 header h1 {
@@ -24,7 +27,6 @@ header h1 {
   position: absolute;
   top: 50vh;
   right: 20vw;
-  
 }
 
 body > h2 {
@@ -36,7 +38,7 @@ body > h2 {
   padding: 10px;
 }
 
-body > nav {
+nav {
   padding: 50px;
   width: 35vw;
   background-repeat: no-repeat;
@@ -53,28 +55,41 @@ body > nav {
   background: url(../assets/hockey_3.jpg);
 }
 
-body > nav a {
+body nav a {
   display: block;
   margin-bottom: 50px;
+  width: 20rem;
   text-decoration: none;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: aliceblue;
   font-size: 25px;
   font-weight: bolder;
   text-shadow: black 1px 1px 5px;
-  transition: all 1s;
+  box-shadow: rgba(255, 166, 0, 0.265) 0px 0px 15px;
+  transition: transform 1s;
+  border-radius: 30px;
+  border: solid 3px rgba(0, 0, 0, 0.817);
+  text-align: center;
 }
-nav a:hover {
+nav a:hover,
+.current:hover {
   transform: scale(1.2);
-  transition: all 1s;
+  background-color: rgb(255, 191, 0);
+  box-shadow: rgb(255, 166, 0) 0px 0px 15px;
 }
-
-main {
+body {
+  width: 100vw;
   display: inline-block;
-  padding: 25px;
-  width: 60vw;
 }
-main p {
+section {
+  color: rgb(153, 154, 155);
+  display: inline-block;
+  vertical-align: top;
+  padding: 3rem;
+  height: 100%;
+  width: 60%;
+}
+section p {
   margin-top: 5px;
   padding-left: 1.5rem;
 }
@@ -83,12 +98,34 @@ main p {
   position: absolute;
   height: 200px;
 }
+.contact-section a{
+  color: rgb(70, 70, 252);
+}
 .about-section {
   position: absolute;
   padding-top: 2rem;
   padding-left: 3rem;
   width: 65vw;
+  font-size: 0.9rem;
 }
-.home-section{
-    position: absolute;
+.current {
+  transition: animation 2s;
+  transition: transform 1s;
+  animation: currentSection alternate-reverse infinite 2s;
+}
+
+@keyframes currentSection {
+  0% {
+  }
+  25% {
+    color: black;
+
+    text-shadow: white 1px 1px 15px;
+  }
+  50% {
+    color: orange;
+  }
+  100% {
+    color: aliceblue;
+  }
 }
