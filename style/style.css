@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+header {
+  width: 100%;
+  height: 55vh;
+  background: url(../assets/design1_image1.jpg);
+  background-size: cover;
+  background-position:0 -150px;
+  padding: 1rem;
+}
+header h1 {
+  font-size: 40px;
+  font-weight: bolder;
+  color: aliceblue;
+  text-shadow: black 1px 1px 5px;
+}
+.logo {
+  height: 140px;
+  width: 140px;
+  position: absolute;
+  top: 50vh;
+  right: 20vw;
+  
+}
+
+body > h2 {
+  width: 100%;
+  background-color: black;
+  color: aliceblue;
+  text-align: center;
+  height: 50px;
+  padding: 10px;
+}
+
+body > nav {
+  padding: 50px;
+  width: 35vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+}
+.nav-home {
+  background: url(../assets/hockey_1.jpg);
+}
+.nav-about {
+  background: url(../assets/hockey_2.jpg);
+}
+.nav-contact {
+  background: url(../assets/hockey_3.jpg);
+}
+
+body > nav a {
+  display: block;
+  margin-bottom: 50px;
+  text-decoration: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: aliceblue;
+  font-size: 25px;
+  font-weight: bolder;
+  text-shadow: black 1px 1px 5px;
+  transition: all 1s;
+}
+nav a:hover {
+  transform: scale(1.2);
+  transition: all 1s;
+}
+
+main {
+  display: inline-block;
+  padding: 25px;
+  width: 60vw;
+}
+main p {
+  margin-top: 5px;
+  padding-left: 1.5rem;
+}
+
+.contact-section {
+  position: absolute;
+  height: 200px;
+}
+.about-section {
+  position: absolute;
+  padding-top: 2rem;
+  padding-left: 3rem;
+  width: 65vw;
+}
+.home-section{
+    position: absolute;
+}
