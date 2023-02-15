@@ -7,74 +7,71 @@
   font-family: "Courier New", Courier, monospace;
 }
 body {
-  background-color: rgb(53, 52, 52);
+  background-color: rgb(72, 72, 72);
 }
 header {
   width: 100%;
-  height: 55vh;
+  height: 15vh;
   background: url(../assets/design1_image1.jpg);
   background-size: cover;
-  background-position: center;
-  padding: 1rem;
+  background-position: bottom;
+  padding: 1rem 3rem;
   background-repeat: no-repeat;
+  transition: all 1s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  animation: banner 5s infinite alternate-reverse ease-in-out;
 }
+header:hover {
+  height: 35vh;
+  background-position: center;
+  align-items: center;
+  transition: all 1s;
+}
+
+.logo {
+  height: 8rem;
+}
+
 header h1 {
   font-size: 40px;
   font-weight: bolder;
   color: aliceblue;
   text-shadow: black 1px 1px 5px;
 }
-.logo {
-  height: 10rem;
-  width: 10rem;
-  position: absolute;
-  top: 47vh;
-  right: 10vw;
-}
 
-body > h2 {
+.sectionTitle {
   font-family: "Babylonica", cursive;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   background-color: black;
   color: aliceblue;
-  text-align: center;
-  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  margin-bottom: 5rem;
 }
 
-.nav-home {
-  background: url(../assets/hockey_1.jpg);
-}
-.nav-about {
-  background: url(../assets/hockey_2.jpg);
-}
-.nav-contact {
-  background: url(../assets/hockey_3.jpg);
-}
-.nav-home,
-.nav-about,
-.nav-contact {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
 nav {
-  padding: 50px;
-  width: 35vw;
-  display: inline-flex;
-  flex-direction: column;
+  width: 40vw;
+  display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: flex-end;
 }
 
-body nav a {
-  min-width: 12rem;
-  max-width: 15rem;
+nav a {
+  min-width: 11rem;
+  max-width: 13rem;
   text-decoration: none;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: aliceblue;
-  font-size: 1.3rem;
+  color: rgb(237, 237, 238);
+  background-color: #53535358;
+  font-size: 1.1rem;
   font-weight: bolder;
-  text-shadow: black 1px 1px 5px;
+  text-shadow: rgba(0, 0, 0, 0.765) 1px 1px 5px;
   box-shadow: rgba(255, 166, 0, 0.265) 0px 0px 15px;
   transition: transform 1s;
   border-radius: 30px;
@@ -90,28 +87,33 @@ nav a:hover,
 body {
   width: 100vw;
 }
+
 section {
   color: rgb(153, 154, 155);
-  display: inline-block;
-  vertical-align: top;
+  width: 50vw;
+  display: flex;
   padding: 3rem;
-  height: 100%;
-  width: 60%;
+  flex-direction: column;
+  margin: 0 auto;
+  border-radius: 40px;
+  background: #353434;
+  box-shadow: 21px 21px 42px #292828, -21px -21px 42px #414040;
 }
+
 section p {
   margin-top: 5px;
   padding-left: 1.5rem;
 }
 
-.contact-section {
-  position: absolute;
-  height: 200px;
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.contact-section a {
+.contact a {
   color: rgb(109, 109, 248);
 }
-.about-section {
-  position: absolute;
+.about {
   padding-top: 2rem;
   padding-left: 3rem;
   width: 65vw;
@@ -123,9 +125,61 @@ section p {
   animation: currentSection alternate-reverse infinite 2s;
 }
 
-.rules-section > h3,
-.rules-section > h2 {
+.sectionTitleContainer {
   text-align: center;
+}
+.rules h2,
+.rules h3 {
+  color: rgba(185, 186, 187, 0.941);
+  margin: 0.5rem 0;
+}
+
+.rules ul {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.rules ul li {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#lastLi {
+  display: list-item !important;
+  margin-left: 2rem;
+  list-style-type:circle;
+}
+
+.fieldsList {
+  list-style-type: lower-alpha;
+  margin-left: 3rem;
+}
+
+.decorator1,
+.decorator2,
+.decorator3 {
+  position: absolute;
+  opacity: 0.6;
+  transition: all 2s;
+  transform: rotate(360deg);
+}
+.decorator1 {
+  rotate: -20deg;
+  top: 8rem;
+  z-index: -3;
+}
+.decorator2 {
+  rotate: 20deg;
+  right: 1rem;
+  top: 10rem;
+  z-index: -2;
+}
+.decorator3 {
+  rotate: 10deg;
+  left: 22rem;
+  bottom: -20rem;
+  z-index: -1;
 }
 
 @keyframes currentSection {
@@ -141,5 +195,13 @@ section p {
   }
   100% {
     color: aliceblue;
+  }
+}
+@keyframes banner {
+  0% {
+    background-position: top;
+  }
+  100% {
+    background-position: bottom;
   }
 }
