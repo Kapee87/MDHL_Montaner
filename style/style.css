@@ -103,8 +103,9 @@ section {
   color: rgb(153, 154, 155);
   width: 50vw;
   display: flex;
-  padding: 3rem;
   flex-direction: column;
+  padding: 2rem;
+  gap: 1.5rem;
   margin: 0 auto;
   border-radius: 40px;
   background: #353434;
@@ -114,6 +115,18 @@ section {
 section p {
   margin-top: 5px;
   padding-left: 1.5rem;
+}
+.homeWrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+section iframe {
+  align-self: flex-end;
+  min-height: 5rem;
+  min-width: 20rem;
+  width: 28vw;
+  height: 25vh;
 }
 
 .registerForm,
@@ -126,11 +139,12 @@ section p {
 
 /* Sección de contacto */
 .contact {
+  font-size: 1.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  text-shadow: rgba(174, 174, 174, 0.79) 3px 0px 5px;
+  text-shadow: rgba(174, 174, 174, 0.507) 2px 0px 5px;
 }
 .contact a {
   color: rgb(109, 109, 248);
@@ -139,11 +153,10 @@ section p {
 .contactImgContainer {
   padding: 1.5rem;
 }
-
 .contactImgContainer img {
   min-width: 4rem;
-  max-width: 9rem;
-  width: 8vw;
+  max-width: 12rem;
+  width: 10vw;
   animation: send 3s infinite ease-in-out;
 }
 
@@ -153,6 +166,7 @@ section p {
   padding-left: 3rem;
   width: 65vw;
   font-size: 0.9rem;
+  margin-bottom: 10vh;
 }
 .about > H2 {
   display: flex;
@@ -181,27 +195,41 @@ section p {
 }
 
 /* Sección de reglas */
-.rules h2,
-.rules h3 {
-  color: rgba(185, 186, 187, 0.941);
-  margin: 0.5rem 0;
+.rules {
+  display: list-item;
 }
-
 .rules ul {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: list-item;
+  margin: 0 2rem;
+}
+.rules h2 {
+  display: inline;
+  margin: 2rem 1rem;
+}
+.sportmanshipContainer h2 {
+  margin: 0;
+}
+.rules > h2,
+.sectionTitleContainer > h2,
+.sectionTitleContainer > h3 {
+  display: block;
+  margin: 1rem 0;
 }
 .rules ul li {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  padding-left: 1rem;
+  display: list-item;
+  list-style: circle;
+  list-style-position: inside;
+  margin: 0.3rem;
 }
-
-.fieldsList {
-  list-style-type: lower-alpha;
-  margin-left: 3rem;
+.rules ol li {
+  padding-left: 1rem;
+  display: list-item;
+  list-style-position: inside;
+  margin: 1rem 0;
+}
+#lastLi {
+  padding-left: 2rem;
 }
 
 /* Sección de infomacion de juego */
@@ -245,11 +273,6 @@ td a img:hover {
   margin: 2rem 0;
   display: flex;
   justify-content: center;
-}
-#lastLi {
-  display: list-item;
-  margin-left: 2rem;
-  list-style-type: circle;
 }
 /* Sección de formulario */
 
@@ -372,114 +395,12 @@ footer p {
   color: rgba(240, 248, 255, 0.922);
   display: flex;
   align-items: center;
-  gap: .4rem;
+  gap: 0.4rem;
 }
 footer p img {
   width: 1.5rem;
   border-radius: 0.5rem;
   background-color: aliceblue;
-}
-
-@media screen and (max-width: 768px) {
-  html,
-  body,
-  header {
-    display: block;
-  }
-  header {
-    height: 50vh;
-    flex-direction: column;
-    width: 100vw;
-    padding: 0.5rem 0.1rem;
-    gap: 0;
-  }
-  header h1 {
-    font-size: 1.8rem;
-  }
-  header .logo {
-    transform: scale(0.8);
-  }
-  header nav {
-    flex-direction: row;
-    gap: 0.25rem;
-  }
-  header nav a {
-    font-size: 0.34rem;
-    padding: 0.1rem;
-    border-radius: 9px;
-    border: solid 2px rgba(27, 27, 27, 0.847);
-  }
-  .sectionTitle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-  }
-  section {
-    font-size: 0.7rem;
-  }
-  section h2 {
-    font-size: 1rem;
-  }
-  .about img {
-    transform: scale(0.5);
-  }
-  .about {
-    font-size: 0.5rem;
-    width: 85%;
-    margin-bottom: 2.5rem;
-  }
-  .about h2 {
-    font-size: 0.7rem;
-    flex-direction: column-reverse;
-    gap: 0;
-  }
-  .registerForm {
-    width: 93vw;
-    padding: 0.3rem;
-  }
-  .personal_info,
-  .school_info {
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 0.5rem;
-    font-size: 0.7rem;
-    padding: 0.1rem;
-  }
-  div label input,
-  fieldset input {
-    display: flex;
-  }
-  .text_input {
-    width: 6.5rem;
-  }
-  .name_container,
-  .city_container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  fieldset legend {
-    font-size: 1rem;
-  }
-  .permission_info {
-    padding: 0.1rem;
-  }
-  .contact {
-    flex-direction: column;
-  }
-}
-@media screen and (max-width: 768px) {
-  .gameInfo {
-    width: 90vw;
-    padding: 0.8rem;
-  }
-  table {
-    font-size: 0.8rem;
-  }
-  .map {
-    transform: scale(0.8);
-  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -523,6 +444,124 @@ footer p img {
   }
   .signature_container {
     flex-wrap: wrap;
+  }
+  .rules p {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .gameInfo {
+    width: 90vw;
+    padding: 0.8rem;
+  }
+  table {
+    font-size: 0.8rem;
+  }
+  .map {
+    transform: scale(0.8);
+  }
+}
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    display: block;
+  }
+  header {
+    height: 50vh;
+    flex-direction: column;
+
+    width: 100vw;
+    padding: 0.5rem 0rem;
+    gap: 0;
+  }
+  header h1 {
+    font-size: 1.8rem;
+    padding: 1rem;
+    width: 100%;
+  }
+  header .logo {
+    transform: scale(0.8);
+    display: flex;
+  }
+  header nav {
+    margin: 0;
+    flex-direction: row;
+    gap: 0.25rem;
+  }
+  header nav a {
+    font-size: 0.34rem;
+    padding: 0 0.1rem;
+    border-radius: 9px;
+    border: solid 2px rgba(27, 27, 27, 0.847);
+  }
+  .sectionTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+  section {
+    font-size: 0.7rem;
+    gap: 0;
+  }
+  section h2 {
+    font-size: 1rem;
+  }
+  .about img {
+    transform: scale(0.5);
+  }
+  .about {
+    font-size: 0.5rem;
+    width: 85%;
+  }
+  .about h2 {
+    font-size: 0.7rem;
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+  .registerForm {
+    width: 93vw;
+    padding: 0.3rem;
+  }
+  .personal_info,
+  .school_info {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    padding: 0.1rem;
+  }
+  div label input,
+  fieldset input {
+    display: flex;
+  }
+  .text_input {
+    width: 6.5rem;
+  }
+  .name_container,
+  .city_container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  fieldset legend {
+    font-size: 1rem;
+  }
+  .permission_info {
+    padding: 0.1rem;
+  }
+  .contact {
+    flex-direction: column;
+  }
+  .homeWrapper {
+    flex-direction: column;
+  }
+  .rules p{
+    padding: .1rem;
+  }
+  #lastLi{
+    margin: 0;
+    padding: .5rem;
   }
 }
 
